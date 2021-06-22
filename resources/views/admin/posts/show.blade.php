@@ -11,6 +11,13 @@
 
         <div class="mt-3 mb-3"><strong>Slug:</strong> {{ $post->slug }}</div>
 
+        
+        @if ($post_category)
+            
+        <div class="mt-3 mb-3"><strong>Category:</strong> {{ $post_category->name }}</div>
+
+        @endif
+
         <p>{{ $post->content }}</p>
 
     </div>
