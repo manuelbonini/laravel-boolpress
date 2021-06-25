@@ -7,7 +7,7 @@
         <ul>
             @foreach($related_posts as $post)
                 <li>
-                    <a href="{{ route('blog-page', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
+                    <a href="{{ route('post-page', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                 </li>
             @endforeach
         </ul>
