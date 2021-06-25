@@ -36,10 +36,29 @@
                     <option value="">Nessuna Categoria</option>
 
                     @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" {{ old('category_id', $post->category_id) == $category->id ? 'selected' :'' }}>{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                     @endforeach
 
                 </select>
+            </div>
+
+            <div class="form-group">
+                <h5>Tags</h5>
+    
+                @foreach ($tags as $tag)
+                <div class="form-check">
+    
+                    @if ($errors->any())
+                        <input class="form-check-input" name="tags[]" type="checkbox" value="{{ $tag->id }}" id="Tag-{{ $tag->id }}" {{ in_array($tag->id, old('tags', [])) ? 'checked' : '' }}>
+                    @else
+                        <input class="form-check-input" name="tags[]" type="checkbox" value="{{ $tag->id }}" id="Tag-{{ $tag->id }}" {{ $post->tags->contains($tag->id) ? 'checked' : '' }}>
+                    @endif
+                    
+                    <label class="form-check-label" for="Tag-{{ $tag->id }}">
+                        {{$tag->name}}
+                    </label>
+                </div> 
+                @endforeach
             </div>
 
             <input type="submit" class="btn btn-success" value="Modifica Post">

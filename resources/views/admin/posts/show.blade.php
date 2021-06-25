@@ -18,6 +18,14 @@
 
         @endif
 
+        <div class="mt-3 mb-3">
+            <strong>Tags:</strong>
+
+            @foreach ($post_tags as $tag)
+                {{ $tag->name }}{{ $loop->last ? '' : ', ' }}
+            @endforeach
+        </div>
+
         <p>{{ $post->content }}</p>
 
     </div>

@@ -23,6 +23,10 @@ Route::get('/posts', 'PostController@index')->name('posts');
 
 Route::get('/posts/{slug}', 'PostController@show')->name('post-page');
 
+Route::get('/categories', 'CategoryController@index')->name('categories');
+
+Route::get('/categories/{slug}', 'CategoryController@show')->name('category-page');
+
 Route::prefix('admin')
     ->namespace('Admin')
     ->name('admin.')

@@ -36,6 +36,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts') }}">Post</a>
                         </li> 
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categories') }}">Categorie piatti</a>
+                        </li> 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
