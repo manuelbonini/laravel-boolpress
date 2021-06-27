@@ -13,3 +13,6 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
+
+// Js per i post mostrati con Vue
+mix.js('resources/js/posts.js', 'public/js');
