@@ -16,7 +16,7 @@
         @endif
 
         {{-- FORM --}}
-        <form action="{{ route('admin.posts.store') }}" method="post">
+        <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('POST')
 
@@ -53,6 +53,12 @@
                     </label>
                 </div> 
                 @endforeach
+            </div>
+
+            {{-- inserimento dei file --}}
+            <div class="form-group">
+                <label for="cover-image">Scegli immagine di copertina</label>
+                <input type="file" class="form-control-file" name="cover-image" id="cover-image">
             </div>
 
             <input type="submit" class="btn btn-success" value="Crea Post">
